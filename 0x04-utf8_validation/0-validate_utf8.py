@@ -3,7 +3,6 @@
 represents a valid UTF-8 encoding"""
 
 
-
 def count_num_of_leading_set_bits(num):
     """returns the number of leading set bits (1)"""
     num_set_bits = 0
