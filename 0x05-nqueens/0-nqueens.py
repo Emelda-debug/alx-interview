@@ -27,7 +27,7 @@ def backtrack(r, n, cols, pos, neg, board):
         neg.add(r - c)
         board[r][c] = 1
 
-        backtrack(r+1, n, cols, pos, neg, board)
+        backtrack(r + 1, n, cols, pos, neg, board)
 
         cols.remove(c)
         pos.remove(r + c)
