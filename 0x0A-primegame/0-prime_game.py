@@ -12,7 +12,8 @@ def isWinner(x, nums):
     # Initialize scores and array of possible prime numbers
     ben_counter = 0
     maria_counter = 0
-    # list 'sorted_list' of length sorted(nums)[-1] + 1 with all elements initialized to 1
+    # list 'sorted_list' of length sorted(nums)[-1] + 1 with all elements
+    # initialized to 1
     sorted_list = [1 for x in range(sorted(nums)[-1] + 1)]
     # The first two elements of the list, are set to 0
     # because 0 and 1 are not prime numbers
