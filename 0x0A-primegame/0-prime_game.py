@@ -3,16 +3,16 @@
 
 
 def isWinner(x, nums):
-    """Function to see who has won the game"""
-    maria_wins_counter = 0
-    ben_wins_counter = 0
+    """Function to get who has won in prime game"""
+    mariaWinsCount = 0
+    benWinsCount = 0
 
     for num in nums:
         roundsSet = list(range(1, num + 1))
         primesSet = primes_in_range(1, num)
 
         if not primesSet:
-            ben_wins_counter += 1
+            benWinsCount += 1
             continue
 
         isMariaTurns = True
@@ -20,9 +20,9 @@ def isWinner(x, nums):
         while(True):
             if not primesSet:
                 if isMariaTurns:
-                    ben_wins_counter += 1
+                    benWinsCount += 1
                 else:
-                    maria_wins_counter += 1
+                    mariaWinsCount += 1
                 break
 
             smallestPrime = primesSet.pop(0)
@@ -32,10 +32,10 @@ def isWinner(x, nums):
 
             isMariaTurns = not isMariaTurns
 
-    if maria_wins_counter > ben_wins_counter:
+    if mariaWinsCount > benWinsCount:
         return "Winner: Maria"
 
-    if maria_wins_counter < ben_wins_counter:
+    if mariaWinsCount < benWinsCount:
         return "Winner: Ben"
 
     return None
