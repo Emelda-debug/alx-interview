@@ -17,14 +17,14 @@ def can_open_all_boxes(boxes: list[list[int]]) -> bool:
     opened_boxes = set([0])  # Start with the first box open
     unopened_boxes = set(boxes[0]).difference(set([0]))
 
-    while unopened_boxes:
+    while len(unopened_boxes) > 0:
         box_index = unopened_boxes.pop()
 
-        if box_index < 0 or box_index >= num_boxes:
+        if not box_index or box_index >= num_boxes or box_index < 0:
             continue
 
         if box_index not in opened_boxes:
-            unopened_boxes.update(boxes[box_index])
+            unopened_boxes = unopened_boxes.union(boxes[box_index])
             opened_boxes.add(box_index)
 
     return num_boxes == len(opened_boxes)
